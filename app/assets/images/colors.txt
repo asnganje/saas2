@@ -1,0 +1,4 @@
+#EEEEEE -> gray-200
+#686d76 -> gray-600 or gray-700
+#373a40 -> gray-800 or gray-900
+#DC5F00 -> orange-600 or orange-700
