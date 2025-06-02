@@ -71,3 +71,5 @@ gem "tailwindcss-rails", "~> 4.2"
 gem "inline_svg"
 
 gem "htmlbeautifier"
+
+gem "devise"
