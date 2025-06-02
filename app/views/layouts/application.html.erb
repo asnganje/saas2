@@ -24,9 +24,17 @@
 
   <body>
     <%if notice.present?%>
-    <p class="absolute top-5 h-8 flex items-center right-75 w-1/2 bg-green-600 px-4 font-semibold text-gray-200 rounded-md"><%= notice %></p>
+      <p class="absolute top-5 h-8 flex items-center justify-between right-75 w-1/2 bg-green-600 px-4 font-semibold text-gray-200 rounded-md"><%= notice %>
+        <span class="cursor-pointer">
+          <%= inline_svg_tag("close.svg")%>
+        </span>
+      </p>
     <%elsif alert.present?%>
-    <p class="absolute top-5 h-8 flex items-center right-75 w-1/2 bg-red-600 px-4 font-semibold text-gray-200 rounded-md"><%= alert %></p>
+      <p class="absolute top-5 h-8 flex items-center justify-between right-75 w-1/2 bg-red-600 px-4 font-semibold text-gray-200 rounded-md"><%= alert %>
+        <span class="cursor-pointer">
+          <%= inline_svg_tag("close.svg")%>
+        </span>
+      </p>
     <%end%>
     <main class="">
       <%= yield %>
