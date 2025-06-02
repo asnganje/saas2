@@ -21,7 +21,7 @@
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="mb-4 text-xl">
+        <div class="mb-4">
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
@@ -31,7 +31,7 @@
         <%= f.submit "Log in", class:"bg-orange-500 hover:bg-orange-600 text-gray-200 font-semibold lg:text-xl p-2 rounded-md cursor-pointer w-[70%]" %>
       </div>
     <% end %>
-    <div class="text-center space-y-4">
+    <div class="text-center">
       <%= render "devise/shared/links" %>
     </div>
   </div>
