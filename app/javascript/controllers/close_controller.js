@@ -4,7 +4,9 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["name"]
   connect() {
-    this.toggle()
+    if(this.hasNameTarget) {
+      this.toggle()
+    }
   }
   toggle() {
     setTimeout(()=> {

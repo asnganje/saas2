@@ -1,0 +1,10 @@
+<div data-hide-target="profileCard" class="hidden bg-gray-600 size-32 p-4 absolute right-0 mt-4 rounded-md font-semibold capitalize">
+  <ul class="flex flex-col gap-4 text-gray-200 font-semibold my-2">
+    <li class="hover:text-gray-100 hover:ml-2">
+      <%= link_to "profile", edit_user_registration_path %>
+    </li>
+    <li class="hover:text-gray-100 hover:ml-2">
+      <%= link_to "logout", destroy_user_session_path, data: {turbo_method: :delete}%>
+    </li>
+  </ul>
+</div>
