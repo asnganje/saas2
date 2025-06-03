@@ -1,16 +1,21 @@
   <nav class="flex items-center justify-between bg-gray-700 py-4 px-6 text-gray-200">
     <div>
       <button>
-        Hamburger
+        <%= inline_svg_tag("hamburger.svg")%>
       </button>
     </div>
-    <div>
-      Search Input
+    <div class="relative flex items-center justify-between cursor-pointer h-10">
+      <input type="text" 
+        class="bg-gray-100 outline-none border h-full rounded-md px-2 text-gray-950"
+        placeholder="search for projects"
+      />
+      <%= inline_svg_tag("search.svg", class:"absolute right-1 text-gray-950")%>
     </div>
     <div>
-      Notifications
+      <%= inline_svg_tag("notification.svg")%>
     </div>
-    <div>
-      User
+    <div class="relative cursor-pointer">
+      <%= inline_svg_tag("user.svg")%>
+      <%= render "dashboard/profile_card"%>
     </div>
   </nav>
