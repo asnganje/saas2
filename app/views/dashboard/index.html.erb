@@ -1,5 +1,9 @@
 <div data-controller="hide" class="min-h-screen bg-gray-900">
   <%= render "dashboard/admin_nav"%>
-  <aside></aside>
-  <main></main>
+  <div class="flex min-h-[88vh]">
+    <%= render "dashboard/sidebar"%>
+    <main class="text-gray-200">
+      This is the main page
+    </main>
+  </div>
 <div>
