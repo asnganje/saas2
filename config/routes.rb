@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "projects/index"
+  resources :projects, only: [ :index ]
   devise_for :users
   resources :dashboard, only: [ :index ]
   get "up" => "rails/health#show", as: :rails_health_check
