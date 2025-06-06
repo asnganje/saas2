@@ -1,0 +1,9 @@
+<div class="max-w-sm mx-auto my-2 border-b border-blue-500 pb-3 mb-3">
+  <%= form_with model: Project.new, class:"flex items-center justify-between" do |f| %>
+    <%=f.text_field :name,
+      class:"bg-gray-100 py-1 rounded-l-md outline-none w-2/3 text-gray-950 px-1",
+      placeholder:"Enter project name..."
+    %>
+    <%= f.submit "Create", class:"text-gray-200 w-1/3 bg-gray-800 hover:bg-gray-700 px-4 py-1 border border-gray-800 cursor-pointer rounded-r-md"%>
+  <%end%>
+</div>
