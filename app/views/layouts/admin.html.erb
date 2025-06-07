@@ -20,12 +20,19 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= turbo_refreshes_with method: :morph, scroll: :preserve %>
+    <%= yield :head%>
   </head>
 
   <body>
     <%= render "shared/flash"%>
-    <main class="">
+  <div data-controller="hide" class="min-h-screen bg-gray-900">
+    <%= render "dashboard/admin_nav"%>
+    <div class="flex min-h-[88vh]">
+      <%= render "dashboard/sidebar"%>
       <%= yield %>
-    </main>
+      <%= turbo_frame_tag :modal%>
+    </div>
+  <div>
   </body>
 </html>
