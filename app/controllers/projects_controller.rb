@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   layout 'admin'
-  before_action :set_project, only: [:destroy]
+  before_action :set_project, only: [:destroy, :edit, :show, :update]
+
   def index
     @projects = Project.all
   end
@@ -17,6 +18,23 @@ class ProjectsController < ApplicationController
       end 
     end
     
+  end
+
+  def show
+  end
+  def edit
+  end
+
+  def update
+    if @project.update(project_params)
+      respond_to do |format|
+        format.html {redirect_to projects_url, notice: "Project updated"}
+      end
+    else
+      respond_to do |format|
+        format.html {redirect_to projects_url, alert: @project.errors.full_messages[0]}
+      end
+    end
   end
 
   def destroy
