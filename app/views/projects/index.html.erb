@@ -11,7 +11,7 @@
       <tbody>
         <% @projects.each do |project| %>
           <tr class="border-b border-gray-500 capitalize">
-            <td class="px-4 py-3"><%= project%></td>
+            <td class="px-4 py-3"><%= project.name%></td>
             <td class="px-4 py-3">80%</td>
             <td class="py-3">
               <%= inline_svg_tag("edit.svg", class:"cursor-pointer")%>
@@ -20,7 +20,9 @@
               <%= inline_svg_tag("view.svg", class:"cursor-pointer")%>
             </td>
             <td class="py-3">
-              <%= inline_svg_tag("delete.svg", class:"cursor-pointer")%>
+              <%=button_to project_path(project), method: :delete, data:{turbo_confirm: "Are you sure?"} do %>
+                <%= inline_svg_tag("delete.svg", class:"cursor-pointer")%>
+              <%end%>
             </td>
           </tr>
         <% end %>
