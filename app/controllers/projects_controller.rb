@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  layout 'admin'
-  before_action :set_project, only: [:destroy, :edit, :show, :update]
+  layout "admin"
+  before_action :set_project, only: [ :destroy, :edit, :show, :update ]
 
   def index
     @projects = Project.all
@@ -10,14 +10,13 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.create(project_params)
     if @project.save
       respond_to do |format|
-        format.html {redirect_to projects_url, notice: "Project created!"} 
-      end      
+        format.html { redirect_to projects_url, notice: "Project created!" }
+      end
     else
       respond_to do |format|
-        format.html {redirect_to projects_url, alert: @project.errors.full_messages[0]}
-      end 
+        format.html { redirect_to projects_url, alert: @project.errors.full_messages[0] }
+      end
     end
-    
   end
 
   def show
@@ -28,11 +27,11 @@ class ProjectsController < ApplicationController
   def update
     if @project.update(project_params)
       respond_to do |format|
-        format.html {redirect_to projects_url, notice: "Project updated"}
+        format.html { redirect_to projects_url, notice: "Project updated" }
       end
     else
       respond_to do |format|
-        format.html {redirect_to projects_url, alert: @project.errors.full_messages[0]}
+        format.html { redirect_to projects_url, alert: @project.errors.full_messages[0] }
       end
     end
   end
@@ -40,11 +39,11 @@ class ProjectsController < ApplicationController
   def destroy
     if @project.destroy
       respond_to do |format|
-        format.html {redirect_to projects_url, notice: "Project deleted"}
+        format.html { redirect_to projects_url, notice: "Project deleted" }
       end
     else
       respond_to do |format|
-        format.html {redirect_to projects_url, alert: @project.errors.full_messages[0]}
+        format.html { redirect_to projects_url, alert: @project.errors.full_messages[0] }
       end
     end
   end
